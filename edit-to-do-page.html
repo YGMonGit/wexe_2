@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/add-to-do-page.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="parent">
+    <nav>
+      <a href="index.html">
+        <span class="material-icons">
+          west
+        </span>
+      </a>
+      <h3 class="normal-cursor">Update todo list</h3>
+      <a href="#">
+        <span class="material-icons">
+          tune
+        </span>
+      </a>
+    </nav>
+    <div id="logo-space">
+      <img src="assets/img_edit_icon.jpg" alt="edit_logo">
+    </div>
+    <form action="index.html" id="todo-form">
+      <select name="todo-type" id="todo-type" class="form-input">
+        <option value="Business" selected>Business<span class="option-dot-style"></span></option>
+        <option value="School">School</option>
+        <option value="Fun">Fun</option>
+      </select>
+      <div class="form-input">
+        <input type="text" name="title" id="title" class="form-input form-input-text" placeholder="Title">
+        <button type="button" class="material-icons clear-btn" id="clear-btn-t">
+          cancel
+        </button>
+      </div>
+      <div class="form-input">
+        <input type="text" name="place" id="place" class="form-input form-input-text" placeholder="Place">
+        <button type="button" class="material-icons clear-btn" id="clear-btn-p">
+          cancel
+        </button>
+      </div>
+      <div class="form-input">
+        <input type="time" name="time" id="time" class="form-input form-input-text" placeholder="Time" style="width: 100%;">
+      </div>
+      <div class="form-input">
+        <input type="text" name="notification" id="notification" class="form-input form-input-text" placeholder="Notification">
+        <button type="button" class="material-icons clear-btn" id="clear-btn-n">
+          cancel
+        </button>
+      </div>
+      <button id="save-edit-btn">SAVE UPDATE</button>
+    </form>
+  </div>
+</body>
+  <script src="scripts/edit-to-do-page.js"></script>
+</html>

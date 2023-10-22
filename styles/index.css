@@ -1,0 +1,243 @@
+#parent {
+  background-color: #ddd;
+  height: 100%;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+#dash-board {
+  background-image: url('../assets/db_image.jpeg');
+  background-size: cover;
+  display: grid;
+  grid-template-rows:repeat(10, 1fr);
+  grid-template-columns: repeat(20, 1fr);
+  height: 203px;
+  width: 100%;
+}
+
+#shade {
+  background-color: black;
+  opacity: .7;
+  grid-column: 13 / -1;
+  grid-row: 1 / -1;
+}
+#db-container {
+  grid-column: 13 / -1;
+  grid-row: 1 / -1;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: 10px 100px 19px 60px 14px;
+  grid-template-columns: 29px 50px 2px 50px 29px;
+}
+
+#inner-parent {
+  grid-column: 2 / 5;
+  grid-row: 2 / 3;
+}
+
+#progress-amount {
+  width: 100px;
+  height: 100px;
+  color: #fcd505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+#svg-parent{
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -100px;
+}
+svg{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+circle {
+  fill: none;
+  stroke: white;
+  stroke-width: 6px;
+}
+#dynamic-circle {
+  stroke: #fcd505;
+  stroke-dasharray: 219;
+  stroke-dashoffset: 219;
+  animation: anim 2s linear forwards;
+}
+
+#done-and-left {
+  grid-column: 1 / -1;
+  grid-row: 4 / 5;
+  display: grid;
+  grid-template-rows: 5px 50px 5px;
+  grid-template-columns: 79px 2px 79px;
+}
+#for-left, 
+#for-done {
+  grid-row: 2 / 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 10px;
+  color: white;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+#for-done { grid-column: 1 / 2; }
+#for-left { grid-column: 3 / -1; }
+
+#for-done > h1 {
+  color: #ffd800;
+}
+
+#for-done > p, #for-left > p{
+  font-size: 13px;
+}
+#line-between{
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background-color: #ddd;
+  opacity: .3;
+}
+
+
+#main-content {
+  position: relative;
+  background-color: red;
+  flex: 1; /* to make this element take all the height left of its parent element */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+#pending-list, #completed-list{
+  height: 50%;
+  width: 100%;
+  background-color: aliceblue;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+#pending-list > span, #completed-list > span {
+  height: 25%;
+  width: 100%;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+}
+#p-list, #c-list {
+  background-color: #FFF;
+  height: 75%;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.todo-thing{
+  background-color: #FFF;
+  height: 75px;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 5px 10px 10px 10px 10px 10px 10px 10px;
+  grid-template-columns: 50px 250px 40px 40px 10px;
+}
+
+.todo-thing-info{
+  grid-row: 1 / -1;
+  grid-column: 2 / 3;
+  border-bottom: 1px solid #ddd;
+  display: grid;
+  grid-template-rows: 15px 20px 15px 4px 10px 10px;
+  grid-template-columns: 250px;
+}
+
+.titles {
+  grid-row: 2 / 3;
+  grid-column: 1 / -1;
+  font-size: 20px;
+  font-weight: bold;
+  color: #1e4a91;
+}
+.places {
+  grid-row: 3 / 4;
+  grid-column: 1 / -1;
+  font-size: 17px;
+}
+.times {
+  grid-row: 5 / 6;
+  grid-column: 1 / -1;
+  font-size: 12px;
+  color: #999;
+}
+
+.status-box, .done-box {
+  grid-row: 1 / -1;
+  grid-column: 1 / 2;
+  color: #CCC;
+  cursor: pointer;
+}
+.black-back{
+  width: 14px;
+  height: 14px;
+  background-color: black;
+  margin-left: -19px;
+}
+.status-selected {
+  z-index: 1;
+}
+.edit-box {
+  grid-row: 1 / -1;
+  grid-column: 3 / 4;
+  color: black;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+.delete-box{
+  grid-row: 1 / -1;
+  grid-column: 4 / 5;
+  color: #a2b6ce;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+.cancel-line{
+  text-decoration: line-through;
+}
+
+.status-box:hover,
+.done-box:hover,
+.edit-box:hover,
+.delete-box:hover {
+  background-color: #EEE;
+}
+
+#addBtn {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  border-radius: 50%;
+  background-color: #ffd800;
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+
+::-webkit-scrollbar {
+  width: 0;
+}
